@@ -1,0 +1,1 @@
+{"version":3,"file":"theme.js","mappings":"mBAGAA,QAAQC,IAAI,O","sources":["webpack://curso-shopify-jesus/./src/templates/index.js"],"sourcesContent":["import 'swiper/css';\nimport '../scss/main.scss';\n\nconsole.log(\"Hola\");"],"names":["console","log"],"sourceRoot":""}

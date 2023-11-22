@@ -1,2 +1,4 @@
 import 'swiper/css';
-import '../scss/main.scss';
+import '../css/tailwind.css';
+
+console.log("Hola");

@@ -1,0 +1,26 @@
+{% unless section.settings.message == blank %}
+<div class="w-full text-center font-bold text-blue-600">  
+  {{ section.settings.message }}
+</div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Hello curso",
+  "settings": [
+    {
+      "id": "message",
+      "type": "richtext",
+      "label": "Message"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hello curso",
+      "settings": {
+        "message": "<p>Hola, bienvenidos a este curso de desarrollo shopify en español</p>"
+      }
+    }
+  ]
+}
+{% endschema %}
