@@ -7,10 +7,11 @@
   "author": "Jesus Uzcategui",
   "license": "MIT",
   "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/tailwind.css --watch",
     "shopify": "shopify theme dev --store cursoyoutubejesus",
     "clean": "rm assets/theme.js",
     "build": "(webpack --config webpack.prod.js --mode production --progress)",
-    "dev": "(webpack --config webpack.dev.js --watch --mode development --progress)"
+    "dev": "(webpack --config webpack.dev.js --watch --mode development --progress) && npm run tailwind"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
