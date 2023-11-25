@@ -1,0 +1,45 @@
+{% unless section.settings.image_desktop == blank %}
+  <figure class="hidden md:block relative w-full pb-[30%] overflow-hidden">
+    <img
+      class="absolute w-full h-full top-0 left-0 object-cover"
+      src="{{ section.settings.image_desktop | image_url }}"
+      width="{{ section.settings.image_desktop.width }}"
+      height="{{ section.settings.image_desktop.height }}"
+      alt="{{ section.settings.image_desktop.alt }}"
+      loading="eager" />
+  </figure>
+{% endunless %}
+{% unless section.settings.image_mobile == blank %}
+  <figure class="block md:hidden relative w-full pb-[130%] overflow-hidden">
+    <img
+      class="absolute w-full h-full top-0 left-0 object-cover"
+      src="{{ section.settings.image_mobile | image_url }}"
+      width="{{ section.settings.image_mobile.width }}"
+      height="{{ section.settings.image_mobile.height }}"
+      alt="{{ section.settings.image_mobile.alt }}"
+      loading="eager" />
+  </figure>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Hero curso",
+  "settings": [
+    {
+      "id": "image_desktop",
+      "type": "image_picker",
+      "label": "Image for desktop"
+    },
+    {
+      "id": "image_mobile",
+      "type": "image_picker",
+      "label": "Image for mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero curso"
+    }
+  ]
+}
+{% endschema %}

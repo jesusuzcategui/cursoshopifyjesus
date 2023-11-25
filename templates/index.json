@@ -1,5 +1,12 @@
 {
   "sections": {
+    "6229c689-99f0-45e0-9874-abd9878a6d50": {
+      "type": "hero-curso",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/Diseno_sin_titulo_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Diseno_sin_titulo_2.png"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -75,6 +82,7 @@
     }
   },
   "order": [
+    "6229c689-99f0-45e0-9874-abd9878a6d50",
     "image_banner",
     "featured_collection",
     "18757ed4-1351-4e3b-b209-8bd851b2b806"
