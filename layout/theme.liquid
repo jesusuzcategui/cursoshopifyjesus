@@ -283,6 +283,11 @@
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+
+    {% liquid
+      render 'vite-tag' with 'ts/theme.ts'
+      render 'vite-tag' with 'scss/theme.scss'
+    %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -293,6 +298,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
+
+    <header-custom></header-custom>
 
     {% sections 'header-group' %}
 
