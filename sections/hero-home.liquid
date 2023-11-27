@@ -1,0 +1,56 @@
+{% liquid
+  assign enlace = section.settings.hero_link
+  assign image_d = section.settings.image_desktop
+  assign image_m = section.settings.image_mobile
+%}
+
+<{% if enlace == blank %}div{% else %}a href="{{ enlace }}"{% endif %} class="block w-100">
+  {% unless image_d == blank %}
+    <figure class="relative overflow-hidden pb-[30%] hidden lg:block">
+      <img
+        class="absolute top-0 left-0 w-full h-full object-cover"
+        src="{{ image_d | image_url }}"
+        width="{{ image_d.width }}"
+        height="{{ image_d.height }}"
+        loading="eager" />
+    </figure>
+  {% endunless %}
+  {% unless image_m == blank %}
+    <figure class="relative overflow-hidden pb-[130%] block lg:hidden">
+      <img
+        class="absolute top-0 left-0 w-full h-full object-cover"
+        src="{{ image_m | image_url }}"
+        width="{{ image_m.width }}"
+        height="{{ image_m.height }}"
+        loading="eager" />
+    </figure>
+  {% endunless %}
+</{% if enlace == blank %}div{% else %}a{% endif %}>
+
+{% schema %}
+{
+  "name": "Hero home",
+  "presets": [
+    {
+      "name": "Hero home"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "url",
+      "id": "hero_link",
+      "label": "Hero link"
+    }
+  ]
+}
+{% endschema %}

@@ -1,5 +1,13 @@
 {
   "sections": {
+    "a0e2323f-ca43-44c9-912a-d11a660d1395": {
+      "type": "hero-home",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/Diseno_sin_titulo_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Diseno_sin_titulo_2.png",
+        "hero_link": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -75,6 +83,7 @@
     }
   },
   "order": [
+    "a0e2323f-ca43-44c9-912a-d11a660d1395",
     "image_banner",
     "featured_collection",
     "18757ed4-1351-4e3b-b209-8bd851b2b806"
