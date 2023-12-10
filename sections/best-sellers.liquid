@@ -1,0 +1,60 @@
+{% liquid
+  assign list = section.settings.product_list
+  assign title = section.settings.title
+  assign desc = section.settings.description
+  assign cant_products = list.size
+%}
+
+{% unless cant_products == 0 %}
+  <div class="w-full pl-[30px] py-8 lg:pl-[100px]">
+    <div class="">
+      {% unless title == blank %}
+        <h3 class="text-center block text-4xl mb-4">{{ title }}</h3>
+      {% endunless %}
+      {% unless desc == blank %}
+        <div class="text-center text-2xl mb-4 max-w-md mx-auto">{{ desc }}</div>
+      {% endunless %}
+
+      <div class="swiper" id="best-sellers__slider">
+        <div class="swiper-wrapper">
+          {% for prod in list %}
+            <div class="swiper-slide">
+              {% render 'product-card', prod: prod %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endunless %}
+
+
+{% schema %}
+{
+  "name": "Best sellers",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best sellers"
+    }
+  ]
+}
+{% endschema %}

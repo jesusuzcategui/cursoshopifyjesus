@@ -1,0 +1,12 @@
+{% unless prod == blank %}
+  <article class="">
+    <a href="{{ prod.url }}">
+      <figure class="relative pb-[100%] overflow-hidden">
+        <img class="absolute w-full h-full top-0 left-0 object-cover" src="{{ prod.featured_image | image_url }}" width="auto" height="auto" loading="lazy" />
+      </figure>
+    </a>
+    <a href="{{ prod.url }}">
+      <h4>{{ prod.title }}</h4>
+    </a>
+  </article>
+{% endunless %}

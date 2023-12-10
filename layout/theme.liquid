@@ -284,10 +284,23 @@
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
 
-    {% liquid
-      render 'vite-tag' with 'ts/theme.ts'
-      render 'vite-tag' with 'scss/theme.scss'
-    %}
+    {% assign is_local = false %}
+
+    <script>
+      if(location.hostname == "127.0.0.1"){
+        {% assign is_local = true %}
+      }
+    </script>
+
+    {% if is_local == true %}
+      {% liquid
+        render 'vite-tag' with 'js/App.js'
+        render 'vite-tag' with 'scss/theme.scss'
+      %}
+    {% else %}
+      <script src="{{ 'app.bundle.js' | asset_url }}" defer></script>
+    {% endif %}
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -358,7 +371,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-    <script src="{{ 'theme.js' | asset_url | script_tag }}" defer></script>
   </body>
 </html>

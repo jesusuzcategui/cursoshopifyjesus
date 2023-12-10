@@ -1,0 +1,7 @@
+{
+  "frontend/entrypoints/js/App.js": {
+    "file": "app.bundle.js",
+    "isEntry": true,
+    "src": "frontend/entrypoints/js/App.js"
+  }
+}
